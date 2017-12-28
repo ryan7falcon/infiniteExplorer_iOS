@@ -12,11 +12,17 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet var myMapView : MKMapView!
-    @IBOutlet var message : UILabel!
+    @IBOutlet var lblName : UILabel!
+    @IBOutlet var img : UIImageView!
+    @IBOutlet var lblDesc: UILabel!
+    var game: Game!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         enableLocationServices()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        game = appDelegate.game
         
         // Do any additional setup after loading the view.
     }
@@ -138,7 +144,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
-        print(lastLocation.coordinate.longitude, lastLocation.coordinate.latitude)
+//        print(lastLocation.coordinate.longitude, lastLocation.coordinate.latitude)
         self.dropAPin(location: lastLocation)
         self.showResult(location: lastLocation)
         // Do something with the location.
@@ -158,10 +164,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
        
         // display if in the box
         if (isInBox(location: location, box: boxPoints)) {
-            message.text = "You are in world 1"
+            game.world = World(id: 1)
         } else {
-            message.text = "You are in world 2"
+            game.world = World(id: 2)
         }
+        self.lblName.text = "You are in " + game.world.name
+        self.lblDesc.text = game.world.desc
+        self.img.image = UIImage(named: game.world.picUrl)
         
     }
     

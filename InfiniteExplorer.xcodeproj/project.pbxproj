@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		941548511FF45F0F00704357 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548501FF45F0F00704357 /* MapViewController.swift */; };
+		941548531FF482F000704357 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548521FF482F000704357 /* World.swift */; };
+		941548551FF4830100704357 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548541FF4830100704357 /* Obstacle.swift */; };
+		941548571FF4851F00704357 /* cats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 941548561FF4851F00704357 /* cats.jpg */; };
+		941548591FF485DA00704357 /* cat2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 941548581FF485DA00704357 /* cat2.jpeg */; };
+		9415485B1FF48A2B00704357 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415485A1FF48A2B00704357 /* Game.swift */; };
 		94F054B01FE06937006A8141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F054AF1FE06937006A8141 /* AppDelegate.swift */; };
 		94F054B21FE06937006A8141 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 94F054B11FE06937006A8141 /* GameScene.sks */; };
 		94F054B41FE06937006A8141 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 94F054B31FE06937006A8141 /* Actions.sks */; };
@@ -21,6 +26,11 @@
 
 /* Begin PBXFileReference section */
 		941548501FF45F0F00704357 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		941548521FF482F000704357 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		941548541FF4830100704357 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
+		941548561FF4851F00704357 /* cats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cats.jpg; sourceTree = "<group>"; };
+		941548581FF485DA00704357 /* cat2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat2.jpeg; sourceTree = "<group>"; };
+		9415485A1FF48A2B00704357 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		94F054AC1FE06937006A8141 /* InfiniteExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F054AF1FE06937006A8141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F054B11FE06937006A8141 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -75,6 +85,11 @@
 				94F054BE1FE06937006A8141 /* LaunchScreen.storyboard */,
 				94F054C11FE06937006A8141 /* Info.plist */,
 				941548501FF45F0F00704357 /* MapViewController.swift */,
+				941548521FF482F000704357 /* World.swift */,
+				941548541FF4830100704357 /* Obstacle.swift */,
+				941548561FF4851F00704357 /* cats.jpg */,
+				941548581FF485DA00704357 /* cat2.jpeg */,
+				9415485A1FF48A2B00704357 /* Game.swift */,
 			);
 			path = InfiniteExplorer;
 			sourceTree = "<group>";
@@ -139,11 +154,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				94F054BB1FE06937006A8141 /* Main.storyboard in Resources */,
+				941548571FF4851F00704357 /* cats.jpg in Resources */,
 				94F054C81FE069A7006A8141 /* Assets in Resources */,
 				94F054B21FE06937006A8141 /* GameScene.sks in Resources */,
 				94F054BD1FE06937006A8141 /* Assets.xcassets in Resources */,
 				94F054C01FE06937006A8141 /* LaunchScreen.storyboard in Resources */,
 				94F054B41FE06937006A8141 /* Actions.sks in Resources */,
+				941548591FF485DA00704357 /* cat2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,8 +173,11 @@
 			files = (
 				94F054B61FE06937006A8141 /* GameScene.swift in Sources */,
 				94F054B81FE06937006A8141 /* GameViewController.swift in Sources */,
+				9415485B1FF48A2B00704357 /* Game.swift in Sources */,
+				941548551FF4830100704357 /* Obstacle.swift in Sources */,
 				94F054B01FE06937006A8141 /* AppDelegate.swift in Sources */,
 				941548511FF45F0F00704357 /* MapViewController.swift in Sources */,
+				941548531FF482F000704357 /* World.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
