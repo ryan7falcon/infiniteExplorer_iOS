@@ -16,6 +16,9 @@
 		94F054BD1FE06937006A8141 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F054BC1FE06937006A8141 /* Assets.xcassets */; };
 		94F054C01FE06937006A8141 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F054BE1FE06937006A8141 /* LaunchScreen.storyboard */; };
 		94F054C81FE069A7006A8141 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 94F054C71FE069A7006A8141 /* Assets */; };
+		AE3AFF321FEADCEC00F74876 /* HighScoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFF311FEADCEC00F74876 /* HighScoreTableViewCell.swift */; };
+		AE3AFF361FF43FE100F74876 /* HighScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFF351FF43FE100F74876 /* HighScoreViewController.swift */; };
+		AE3AFF381FF4B4F600F74876 /* HighScoreApiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFF371FF4B4F600F74876 /* HighScoreApiClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		94F054BF1FE06937006A8141 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		94F054C11FE06937006A8141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		94F054C71FE069A7006A8141 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Assets; path = InfiniteExplorer/Assets; sourceTree = "<group>"; };
+		AE3AFF311FEADCEC00F74876 /* HighScoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreTableViewCell.swift; sourceTree = "<group>"; };
+		AE3AFF351FF43FE100F74876 /* HighScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreViewController.swift; sourceTree = "<group>"; };
+		AE3AFF371FF4B4F600F74876 /* HighScoreApiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighScoreApiClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,9 @@
 				94F054BC1FE06937006A8141 /* Assets.xcassets */,
 				94F054BE1FE06937006A8141 /* LaunchScreen.storyboard */,
 				94F054C11FE06937006A8141 /* Info.plist */,
+				AE3AFF311FEADCEC00F74876 /* HighScoreTableViewCell.swift */,
+				AE3AFF351FF43FE100F74876 /* HighScoreViewController.swift */,
+				AE3AFF371FF4B4F600F74876 /* HighScoreApiClass.swift */,
 			);
 			path = InfiniteExplorer;
 			sourceTree = "<group>";
@@ -151,8 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE3AFF381FF4B4F600F74876 /* HighScoreApiClass.swift in Sources */,
 				94F054B61FE06937006A8141 /* GameScene.swift in Sources */,
+				AE3AFF361FF43FE100F74876 /* HighScoreViewController.swift in Sources */,
 				94F054B81FE06937006A8141 /* GameViewController.swift in Sources */,
+				AE3AFF321FEADCEC00F74876 /* HighScoreTableViewCell.swift in Sources */,
 				94F054B01FE06937006A8141 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
