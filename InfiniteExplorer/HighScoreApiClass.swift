@@ -29,10 +29,7 @@ class HighScoreApiClass: NSObject {
             print("Error creating endpoint")
             return
         }
-        guard let endpoint2 = URL(string: myUrl2) else {
-            print("Error creating endpoint")
-            return
-        }
+       
         // step 5b - create URL request object
         let request = URLRequest(url: endpoint)
         // step 5c - create asynchronous request using dataTask

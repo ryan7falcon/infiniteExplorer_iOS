@@ -43,15 +43,16 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         //WorldChooser.addTarget(self,action:"segmentedControlValueChanged",for:.valueChanged)
         // Do any additional setup after loading the view.
-    
+        Api.GetWorld1Scores()
+        Api.GetWorld2Scores()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:  #selector(self.refreshTable), userInfo: nil, repeats: true);
         
-        Api.GetWorld1Scores()
-        Api.GetWorld2Scores()
+        
         
     }
     

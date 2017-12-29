@@ -90,18 +90,15 @@
 				94F054BC1FE06937006A8141 /* Assets.xcassets */,
 				94F054BE1FE06937006A8141 /* LaunchScreen.storyboard */,
 				94F054C11FE06937006A8141 /* Info.plist */,
-<<<<<<< HEAD
 				AE3AFF311FEADCEC00F74876 /* HighScoreTableViewCell.swift */,
 				AE3AFF351FF43FE100F74876 /* HighScoreViewController.swift */,
 				AE3AFF371FF4B4F600F74876 /* HighScoreApiClass.swift */,
-=======
 				941548501FF45F0F00704357 /* MapViewController.swift */,
 				941548521FF482F000704357 /* World.swift */,
 				941548541FF4830100704357 /* Obstacle.swift */,
 				941548561FF4851F00704357 /* cats.jpg */,
 				941548581FF485DA00704357 /* cat2.jpeg */,
 				9415485A1FF48A2B00704357 /* Game.swift */,
->>>>>>> 3daa6bf654acdabf9ca4e6a72e65486d546e7896
 			);
 			path = InfiniteExplorer;
 			sourceTree = "<group>";
@@ -187,12 +184,9 @@
 				94F054B61FE06937006A8141 /* GameScene.swift in Sources */,
 				AE3AFF361FF43FE100F74876 /* HighScoreViewController.swift in Sources */,
 				94F054B81FE06937006A8141 /* GameViewController.swift in Sources */,
-<<<<<<< HEAD
 				AE3AFF321FEADCEC00F74876 /* HighScoreTableViewCell.swift in Sources */,
-=======
 				9415485B1FF48A2B00704357 /* Game.swift in Sources */,
 				941548551FF4830100704357 /* Obstacle.swift in Sources */,
->>>>>>> 3daa6bf654acdabf9ca4e6a72e65486d546e7896
 				94F054B01FE06937006A8141 /* AppDelegate.swift in Sources */,
 				941548511FF45F0F00704357 /* MapViewController.swift in Sources */,
 				941548531FF482F000704357 /* World.swift in Sources */,
