@@ -15,37 +15,34 @@ class HighScoreApiClass: NSObject {
     var World2Scores : [NSDictionary]?
     let myUrl = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/GetHighScore/1" as String
     let myUrl2 = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/GetHighScore/2" as String
+    let CreateSocreUrl = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/CreateHighScore/" as String
     
     enum JSONError: String, Error {
         case NoData = "ERROR: no data"
         case ConversionFailed = "ERROR: conversion from JSON failed"
     }
     
-    // Step 5 - Create method below to do JSON parsing
     func GetWorld1Scores() {
         
-        // step 5a - create URL object
         guard let endpoint = URL(string: myUrl) else {
             print("Error creating endpoint")
             return
         }
        
-        // step 5b - create URL request object
         let request = URLRequest(url: endpoint)
-        // step 5c - create asynchronous request using dataTask
+  
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
-                // step 5d - retrieve JSON objects, convert to string and print to verify data received.
+          
                 let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(datastring!)
                 
-                // step 5e - check for empty data
+        
                 guard let data = data else {
                     throw JSONError.NoData
                 }
                 
-                // step 5f - convert json into a dictionary
-                // catch errors, then move on to Table View Controller
+           
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary] else {
                     throw JSONError.ConversionFailed
                 }
@@ -60,30 +57,30 @@ class HighScoreApiClass: NSObject {
             }.resume()
     
     }
+    
     func GetWorld2Scores() {
         
-        // step 5a - create URL object
+  
         
         guard let endpoint2 = URL(string: myUrl2) else {
             print("Error creating endpoint")
             return
         }
-        // step 5b - create URL request object
+ 
         let request2 = URLRequest(url: endpoint2)
-        // step 5c - create asynchronous request using dataTask
+   
         URLSession.shared.dataTask(with: request2) { (data, response, error) in
             do {
-                // step 5d - retrieve JSON objects, convert to string and print to verify data received.
+           
                 let datastring = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                 print(datastring!)
                 
-                // step 5e - check for empty data
+              
                 guard let data = data else {
                     throw JSONError.NoData
                 }
                 
-                // step 5f - convert json into a dictionary
-                // catch errors, then move on to Table View Controller
+    
                 guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [NSDictionary] else {
                     throw JSONError.ConversionFailed
                 }
@@ -96,6 +93,47 @@ class HighScoreApiClass: NSObject {
                 print(error.debugDescription)
             }
             }.resume()
+        
+    }
+    
+    
+    func PostScore( name: String ,score : Int, world: Int){
+        
+        let json: [String: Any] = ["name": name,
+                                   "score": score, "world": world]
+        
+        
+        // create post endpoint
+        guard let endpoint3 = URL(string: CreateSocreUrl) else {
+            print("Error creating endpoint")
+            return
+        }
+        //creates the Post request
+        var request = URLRequest(url: endpoint3)
+        request.httpMethod = "POST"
+        
+        // insert json data to the request
+        do{
+        request.httpBody =  try JSONSerialization.data(withJSONObject: json)
+        }
+        catch let error{
+            
+            print(error)
+        }
+        //Adds Header Fields
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        //Does this shit right
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            do {
+               
+            } catch let error as JSONError {
+                print(error.rawValue)
+            } catch let error as NSError {
+                print(error.debugDescription)
+            }
+            }.resume()
+        
         
     }
 }

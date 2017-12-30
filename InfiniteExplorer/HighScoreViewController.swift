@@ -13,6 +13,12 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @IBOutlet var WorldChooser : UISegmentedControl!
     @IBOutlet var HighScoreTable : UITableView!
+    @IBOutlet var ScoreLbl : UILabel!
+    @IBOutlet var UserNameLbl : UILabel!
+    
+    var NewScore : Int!
+    var NewWorld : Int!
+    var NewName : String!
     
     let Api = HighScoreApiClass()
     var timer : Timer!
@@ -35,7 +41,6 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     @IBAction func segmentedControlActionChanged(sender: AnyObject) {
-        
         HighScoreTable.reloadData()
     }
     
@@ -43,14 +48,26 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         //WorldChooser.addTarget(self,action:"segmentedControlValueChanged",for:.valueChanged)
         // Do any additional setup after loading the view.
+        NewName = "AAA"
+        NewScore = 100001
+        NewWorld = 2
+      //  Api.PostScore(name:NewName, score:NewScore , world:NewWorld)
+        
+        
+        let ScoreString = String(describing:NewScore!)
+        ScoreLbl.text = ScoreString
+        UserNameLbl.text = NewName
+        
         Api.GetWorld1Scores()
         Api.GetWorld2Scores()
+      
+          self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:  #selector(self.refreshTable), userInfo: nil, repeats: true);
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:  #selector(self.refreshTable), userInfo: nil, repeats: true);
+      
         
         
         
@@ -83,11 +100,11 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
         if(WorldChooser.selectedSegmentIndex == 1){
             if Api.World2Scores != nil
             {
-            return (Api.World2Scores?.count)!
+                return (Api.World2Scores?.count)!
             }
             else
             {
-            return 0
+                return 0
             }
         }
         else{
