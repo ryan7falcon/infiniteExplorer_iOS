@@ -2,8 +2,8 @@
 //  GameViewController.swift
 //  InfiniteExplorer
 //
-//  Created by Galimova Galina on 2017-12-12.
-//  Copyright © 2017 Ryan Falcon. All rights reserved.
+//  Created by Ryan Galimova on 2017-12-12.
+//  Copyright © 2017 Ryan Galimova. All rights reserved.
 //
 
 import UIKit

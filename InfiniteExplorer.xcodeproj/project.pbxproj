@@ -10,9 +10,17 @@
 		941548511FF45F0F00704357 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548501FF45F0F00704357 /* MapViewController.swift */; };
 		941548531FF482F000704357 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548521FF482F000704357 /* World.swift */; };
 		941548551FF4830100704357 /* Obstacle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548541FF4830100704357 /* Obstacle.swift */; };
-		941548571FF4851F00704357 /* cats.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 941548561FF4851F00704357 /* cats.jpg */; };
-		941548591FF485DA00704357 /* cat2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 941548581FF485DA00704357 /* cat2.jpeg */; };
 		9415485B1FF48A2B00704357 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9415485A1FF48A2B00704357 /* Game.swift */; };
+		94432D431FF87ECB00B0882F /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94432D411FF87ECB00B0882F /* Interface.storyboard */; };
+		94432D451FF87ECB00B0882F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94432D441FF87ECB00B0882F /* Assets.xcassets */; };
+		94432D4C1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 94432D4B1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		94432D511FF87ECC00B0882F /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94432D501FF87ECC00B0882F /* InterfaceController.swift */; };
+		94432D531FF87ECC00B0882F /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94432D521FF87ECC00B0882F /* ExtensionDelegate.swift */; };
+		94432D551FF87ECC00B0882F /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94432D541FF87ECC00B0882F /* NotificationController.swift */; };
+		94432D571FF87ECC00B0882F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94432D561FF87ECC00B0882F /* Assets.xcassets */; };
+		94432D5C1FF87ECC00B0882F /* InfiniteExplorer WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 94432D3F1FF87ECB00B0882F /* InfiniteExplorer WatchKit App.app */; };
+		94432D671FF8845700B0882F /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 941548521FF482F000704357 /* World.swift */; };
+		94432D6B1FF8976600B0882F /* WorldInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94432D6A1FF8976600B0882F /* WorldInterfaceController.swift */; };
 		94F054B01FE06937006A8141 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F054AF1FE06937006A8141 /* AppDelegate.swift */; };
 		94F054B21FE06937006A8141 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 94F054B11FE06937006A8141 /* GameScene.sks */; };
 		94F054B41FE06937006A8141 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 94F054B31FE06937006A8141 /* Actions.sks */; };
@@ -27,13 +35,67 @@
 		AE3AFF381FF4B4F600F74876 /* HighScoreApiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3AFF371FF4B4F600F74876 /* HighScoreApiClass.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		94432D4D1FF87ECC00B0882F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F054A41FE06937006A8141 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94432D4A1FF87ECC00B0882F;
+			remoteInfo = "InfiniteExplorer WatchKit App Extension";
+		};
+		94432D5A1FF87ECC00B0882F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 94F054A41FE06937006A8141 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94432D3E1FF87ECB00B0882F;
+			remoteInfo = "InfiniteExplorer WatchKit App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		94432D601FF87ECC00B0882F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				94432D4C1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94432D641FF87ECC00B0882F /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				94432D5C1FF87ECC00B0882F /* InfiniteExplorer WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		941548501FF45F0F00704357 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		941548521FF482F000704357 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		941548541FF4830100704357 /* Obstacle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Obstacle.swift; sourceTree = "<group>"; };
-		941548561FF4851F00704357 /* cats.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cats.jpg; sourceTree = "<group>"; };
-		941548581FF485DA00704357 /* cat2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cat2.jpeg; sourceTree = "<group>"; };
 		9415485A1FF48A2B00704357 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		94432D351FF878DC00B0882F /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = System/Library/Frameworks/WatchConnectivity.framework; sourceTree = SDKROOT; };
+		94432D361FF878DC00B0882F /* WatchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchKit.framework; path = System/Library/Frameworks/WatchKit.framework; sourceTree = SDKROOT; };
+		94432D3F1FF87ECB00B0882F /* InfiniteExplorer WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InfiniteExplorer WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94432D421FF87ECB00B0882F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		94432D441FF87ECB00B0882F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94432D461FF87ECB00B0882F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94432D4B1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "InfiniteExplorer WatchKit App Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94432D501FF87ECC00B0882F /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		94432D521FF87ECC00B0882F /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		94432D541FF87ECC00B0882F /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		94432D561FF87ECC00B0882F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		94432D581FF87ECC00B0882F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94432D591FF87ECC00B0882F /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		94432D6A1FF8976600B0882F /* WorldInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInterfaceController.swift; sourceTree = "<group>"; };
 		94F054AC1FE06937006A8141 /* InfiniteExplorer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteExplorer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F054AF1FE06937006A8141 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		94F054B11FE06937006A8141 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -51,6 +113,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		94432D481FF87ECC00B0882F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94F054A91FE06937006A8141 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,12 +130,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94432D341FF878DC00B0882F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94432D351FF878DC00B0882F /* WatchConnectivity.framework */,
+				94432D361FF878DC00B0882F /* WatchKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		94432D401FF87ECB00B0882F /* InfiniteExplorer WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				94432D411FF87ECB00B0882F /* Interface.storyboard */,
+				94432D441FF87ECB00B0882F /* Assets.xcassets */,
+				94432D461FF87ECB00B0882F /* Info.plist */,
+			);
+			path = "InfiniteExplorer WatchKit App";
+			sourceTree = "<group>";
+		};
+		94432D4F1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension */ = {
+			isa = PBXGroup;
+			children = (
+				94432D501FF87ECC00B0882F /* InterfaceController.swift */,
+				94432D521FF87ECC00B0882F /* ExtensionDelegate.swift */,
+				94432D541FF87ECC00B0882F /* NotificationController.swift */,
+				94432D561FF87ECC00B0882F /* Assets.xcassets */,
+				94432D581FF87ECC00B0882F /* Info.plist */,
+				94432D591FF87ECC00B0882F /* PushNotificationPayload.apns */,
+				94432D6A1FF8976600B0882F /* WorldInterfaceController.swift */,
+			);
+			path = "InfiniteExplorer WatchKit App Extension";
+			sourceTree = "<group>";
+		};
 		94F054A31FE06937006A8141 = {
 			isa = PBXGroup;
 			children = (
 				94F054AE1FE06937006A8141 /* InfiniteExplorer */,
+				94432D401FF87ECB00B0882F /* InfiniteExplorer WatchKit App */,
+				94432D4F1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension */,
 				94F054AD1FE06937006A8141 /* Products */,
 				94F054C71FE069A7006A8141 /* Assets */,
+				94432D341FF878DC00B0882F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +179,8 @@
 			isa = PBXGroup;
 			children = (
 				94F054AC1FE06937006A8141 /* InfiniteExplorer.app */,
+				94432D3F1FF87ECB00B0882F /* InfiniteExplorer WatchKit App.app */,
+				94432D4B1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,8 +203,6 @@
 				941548501FF45F0F00704357 /* MapViewController.swift */,
 				941548521FF482F000704357 /* World.swift */,
 				941548541FF4830100704357 /* Obstacle.swift */,
-				941548561FF4851F00704357 /* cats.jpg */,
-				941548581FF485DA00704357 /* cat2.jpeg */,
 				9415485A1FF48A2B00704357 /* Game.swift */,
 			);
 			path = InfiniteExplorer;
@@ -106,6 +211,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		94432D3E1FF87ECB00B0882F /* InfiniteExplorer WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94432D611FF87ECC00B0882F /* Build configuration list for PBXNativeTarget "InfiniteExplorer WatchKit App" */;
+			buildPhases = (
+				94432D3D1FF87ECB00B0882F /* Resources */,
+				94432D601FF87ECC00B0882F /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				94432D4E1FF87ECC00B0882F /* PBXTargetDependency */,
+			);
+			name = "InfiniteExplorer WatchKit App";
+			productName = "InfiniteExplorer WatchKit App";
+			productReference = 94432D3F1FF87ECB00B0882F /* InfiniteExplorer WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		94432D4A1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 94432D5D1FF87ECC00B0882F /* Build configuration list for PBXNativeTarget "InfiniteExplorer WatchKit App Extension" */;
+			buildPhases = (
+				94432D471FF87ECC00B0882F /* Sources */,
+				94432D481FF87ECC00B0882F /* Frameworks */,
+				94432D491FF87ECC00B0882F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InfiniteExplorer WatchKit App Extension";
+			productName = "InfiniteExplorer WatchKit App Extension";
+			productReference = 94432D4B1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		94F054AB1FE06937006A8141 /* InfiniteExplorer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 94F054C41FE06937006A8141 /* Build configuration list for PBXNativeTarget "InfiniteExplorer" */;
@@ -113,10 +252,12 @@
 				94F054A81FE06937006A8141 /* Sources */,
 				94F054A91FE06937006A8141 /* Frameworks */,
 				94F054AA1FE06937006A8141 /* Resources */,
+				94432D641FF87ECC00B0882F /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				94432D5B1FF87ECC00B0882F /* PBXTargetDependency */,
 			);
 			name = InfiniteExplorer;
 			productName = InfiniteExplorer;
@@ -133,6 +274,14 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Ryan Falcon";
 				TargetAttributes = {
+					94432D3E1FF87ECB00B0882F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					94432D4A1FF87ECC00B0882F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					94F054AB1FE06937006A8141 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
@@ -153,29 +302,58 @@
 			projectRoot = "";
 			targets = (
 				94F054AB1FE06937006A8141 /* InfiniteExplorer */,
+				94432D3E1FF87ECB00B0882F /* InfiniteExplorer WatchKit App */,
+				94432D4A1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		94432D3D1FF87ECB00B0882F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94432D451FF87ECB00B0882F /* Assets.xcassets in Resources */,
+				94432D431FF87ECB00B0882F /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		94432D491FF87ECC00B0882F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94432D571FF87ECC00B0882F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94F054AA1FE06937006A8141 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				94F054BB1FE06937006A8141 /* Main.storyboard in Resources */,
-				941548571FF4851F00704357 /* cats.jpg in Resources */,
 				94F054C81FE069A7006A8141 /* Assets in Resources */,
 				94F054B21FE06937006A8141 /* GameScene.sks in Resources */,
 				94F054BD1FE06937006A8141 /* Assets.xcassets in Resources */,
 				94F054C01FE06937006A8141 /* LaunchScreen.storyboard in Resources */,
 				94F054B41FE06937006A8141 /* Actions.sks in Resources */,
-				941548591FF485DA00704357 /* cat2.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		94432D471FF87ECC00B0882F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				94432D6B1FF8976600B0882F /* WorldInterfaceController.swift in Sources */,
+				94432D671FF8845700B0882F /* World.swift in Sources */,
+				94432D551FF87ECC00B0882F /* NotificationController.swift in Sources */,
+				94432D531FF87ECC00B0882F /* ExtensionDelegate.swift in Sources */,
+				94432D511FF87ECC00B0882F /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		94F054A81FE06937006A8141 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,7 +373,28 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		94432D4E1FF87ECC00B0882F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94432D4A1FF87ECC00B0882F /* InfiniteExplorer WatchKit App Extension */;
+			targetProxy = 94432D4D1FF87ECC00B0882F /* PBXContainerItemProxy */;
+		};
+		94432D5B1FF87ECC00B0882F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 94432D3E1FF87ECB00B0882F /* InfiniteExplorer WatchKit App */;
+			targetProxy = 94432D5A1FF87ECC00B0882F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		94432D411FF87ECB00B0882F /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				94432D421FF87ECB00B0882F /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		94F054B91FE06937006A8141 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -215,6 +414,78 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		94432D5E1FF87ECC00B0882F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "InfiniteExplorer WatchKit App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Falcon.InfiniteExplorer.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		94432D5F1FF87ECC00B0882F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "InfiniteExplorer WatchKit App Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Falcon.InfiniteExplorer.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
+		94432D621FF87ECC00B0882F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NLTF72QNU8;
+				IBSC_MODULE = InfiniteExplorer_WatchKit_App_Extension;
+				INFOPLIST_FILE = "InfiniteExplorer WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Falcon.InfiniteExplorer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Debug;
+		};
+		94432D631FF87ECC00B0882F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = NLTF72QNU8;
+				IBSC_MODULE = InfiniteExplorer_WatchKit_App_Extension;
+				INFOPLIST_FILE = "InfiniteExplorer WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "Ryan-Falcon.InfiniteExplorer.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 4.2;
+			};
+			name = Release;
+		};
 		94F054C21FE06937006A8141 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -355,6 +626,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		94432D5D1FF87ECC00B0882F /* Build configuration list for PBXNativeTarget "InfiniteExplorer WatchKit App Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94432D5E1FF87ECC00B0882F /* Debug */,
+				94432D5F1FF87ECC00B0882F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		94432D611FF87ECC00B0882F /* Build configuration list for PBXNativeTarget "InfiniteExplorer WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				94432D621FF87ECC00B0882F /* Debug */,
+				94432D631FF87ECC00B0882F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		94F054A71FE06937006A8141 /* Build configuration list for PBXProject "InfiniteExplorer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -2,14 +2,37 @@
 //  MapViewController.swift
 //  InfiniteExplorer
 //
-//  Created by Galimova Galina on 2017-12-27.
-//  Copyright © 2017 Ryan Falcon. All rights reserved.
+//  Created by Ryan Galimova on 2017-12-27.
+//  Copyright © 2017 Ryan Galimova. All rights reserved.
 //
 
 import UIKit
 import MapKit
+import WatchConnectivity
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate  {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        let worldData = NSKeyedArchiver.archivedData(withRootObject: game.world)
+        sendWatchMessage(msgData: worldData)
+    }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+        var replyValues = Dictionary<String, AnyObject>()
+        if(message["getProgData"] != nil) {
+            NSKeyedArchiver.setClassName("World", for: World.self)
+            let worldData = NSKeyedArchiver.archivedData(withRootObject: game.world)
+            replyValues["progData"] = worldData as AnyObject?
+            replyHandler(replyValues)
+        }
+    }
 
     @IBOutlet var myMapView : MKMapView!
     @IBOutlet var lblName : UILabel!
@@ -21,10 +44,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func viewDidLoad() {
         super.viewDidLoad()
         enableLocationServices()
+        if (WCSession.isSupported()){
+            let session = WCSession.default
+            session.delegate = self
+            session.activate()
+        }
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         game = appDelegate.game
-        
+    
         // Do any additional setup after loading the view.
+    }
+    
+    var lastMessage : CFAbsoluteTime = 0
+    
+    func sendWatchMessage(msgData : Data){
+        let currentTime = CFAbsoluteTimeGetCurrent()
+        
+        if currentTime - lastMessage < 0.5 {
+            return
+        }
+        
+        if (WCSession.default.isReachable){
+            let message = ["progData" : msgData]
+            WCSession.default.sendMessage(message, replyHandler: nil, errorHandler: nil)
+        }
+        lastMessage = CFAbsoluteTimeGetCurrent()
     }
     
     let locationManager = CLLocationManager()
