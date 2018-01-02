@@ -3,34 +3,40 @@
 //  InfiniteExplorer
 //
 //  Created by Xcode User on 2017-12-28.
-//  Copyright © 2017 Ryan Falcon. All rights reserved.
-//
+//  Author Thomas Irwin
+// This Class is used to support and manage all the API Calls to the Remote Server
 
 import UIKit
 
 class HighScoreApiClass: NSObject {
 
-    
+    //Dictinoary to store world 1 scores
     var World1Scores : [NSDictionary]?
+    //Dictionary to hold world 2 scores
     var World2Scores : [NSDictionary]?
+    //Url for the first set of scores
     let myUrl = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/GetHighScore/1" as String
+    //Url for the second of the sets scores
     let myUrl2 = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/GetHighScore/2" as String
+    //API Url for the Post creation
     let CreateSocreUrl = "https://mysterious-coast-28480.herokuapp.com/api/v1/HighScore/CreateHighScore/" as String
-    
+    //Sets Error codes for different Json errors
     enum JSONError: String, Error {
         case NoData = "ERROR: no data"
         case ConversionFailed = "ERROR: conversion from JSON failed"
     }
     
+    
+    //This method connects with the remote database and stores the set of scores return into the apporiate nsdictionary
     func GetWorld1Scores() {
         
         guard let endpoint = URL(string: myUrl) else {
             print("Error creating endpoint")
             return
         }
-       
+       //creates the request
         let request = URLRequest(url: endpoint)
-  
+        //Creates a session to get the data
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
           
@@ -57,7 +63,7 @@ class HighScoreApiClass: NSObject {
             }.resume()
     
     }
-    
+    //This method gets the data to store in the nsdictionary for the second set of scores
     func GetWorld2Scores() {
         
   
@@ -96,7 +102,7 @@ class HighScoreApiClass: NSObject {
         
     }
     
-    
+    //Connect with the remote database and performs a Post method to save a new Score to the database
     func PostScore( name: String ,score : Int, world: Int){
         
         let json: [String: Any] = ["name": name,
@@ -123,7 +129,7 @@ class HighScoreApiClass: NSObject {
         //Adds Header Fields
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        //Does this shit right
+        //Preforms the task
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
                

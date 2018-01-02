@@ -3,15 +3,16 @@
 //  InfiniteExplorer
 //
 //  Created by Xcode User on 2017-12-20.
-//  Copyright © 2017 Ryan Falcon. All rights reserved.
-//
+//  Author Thomas Irwin
+// The Cell Design for the Table
 
 import UIKit
 
 class HighScoreTableViewCell: UITableViewCell {
     
-    
+    //Holds the Name of the HighScore Players
     @IBOutlet var lblName : UILabel!
+    //Holds the Score of the highScore Players
     @IBOutlet var lblScore : UILabel!
   
 
