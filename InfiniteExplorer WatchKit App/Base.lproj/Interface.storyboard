@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13771" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13756"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="InfiniteExplorer_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="Infinite Explorer" textAlignment="center" id="VMU-Wm-UkR"/>
+                        <button width="1" alignment="left" title="World" id="vW3-8k-w57">
+                            <connections>
+                                <segue destination="1Z7-5K-4xf" kind="modal" id="hrP-8v-lt9"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--WorldInterfaceController-->
+        <scene sceneID="yR9-sD-Jm7">
+            <objects>
+                <controller identifier="WorldInterfaceController" id="1Z7-5K-4xf" customClass="WorldInterfaceController" customModule="InfiniteExplorer_WatchKit_App_Extension">
+                    <items>
+                        <label width="136" alignment="left" text="World" textAlignment="center" id="lMb-ot-Mit"/>
+                        <group width="1" height="48" alignment="left" layout="vertical" id="wQF-uM-jxK">
+                            <items>
+                                <label width="136" alignment="left" text="Name" id="lCi-kl-rdd"/>
+                                <label width="134" alignment="left" text="Description" id="L5k-aJ-slB">
+                                    <color key="textColor" red="0.69119525770000001" green="0.1691201282" blue="0.89730726520000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </label>
+                            </items>
+                        </group>
+                        <imageView height="74" alignment="left" contentMode="scaleAspectFit" id="Gic-ZX-ZIX"/>
+                    </items>
+                    <connections>
+                        <outlet property="img" destination="Gic-ZX-ZIX" id="5Za-gp-s78"/>
+                        <outlet property="lblDesc" destination="L5k-aJ-slB" id="Cou-ug-xbC"/>
+                        <outlet property="lblName" destination="lCi-kl-rdd" id="l7L-jJ-RYJ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="463" y="336"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="InfiniteExplorer_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
