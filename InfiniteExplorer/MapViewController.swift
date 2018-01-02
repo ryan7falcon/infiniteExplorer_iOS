@@ -11,6 +11,7 @@ import MapKit
 import WatchConnectivity
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, WCSessionDelegate  {
+    // Send the watch data when session is activated
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         let worldData = NSKeyedArchiver.archivedData(withRootObject: game.world)
         sendWatchMessage(msgData: worldData)
@@ -24,6 +25,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
+    // reply with data when request is received
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         var replyValues = Dictionary<String, AnyObject>()
         if(message["getProgData"] != nil) {
@@ -34,13 +36,18 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
 
+    // map view
     @IBOutlet var myMapView : MKMapView!
+    // world name label
     @IBOutlet var lblName : UILabel!
+    // cat image - in or out of the box
     @IBOutlet var img : UIImageView!
+    // world description
     @IBOutlet var lblDesc: UILabel!
+    // the game object
     var game: Game!
     
-    
+    // set everything up when the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         enableLocationServices()
@@ -57,6 +64,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     var lastMessage : CFAbsoluteTime = 0
     
+    // send watch data
     func sendWatchMessage(msgData : Data){
         let currentTime = CFAbsoluteTimeGetCurrent()
         
@@ -75,6 +83,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     let initialLocation = CLLocation(latitude: 43.655787, longitude: -79.739534)
     
+    // world radius
     let boxRadius = 10.0
     var boxPoints = [] as Array<CLLocationCoordinate2D>
 
@@ -84,6 +93,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         myMapView.setRegion(coordinateRegion, animated: true)
     }
     
+    // enable location services, request authorization to use them from the user
     func enableLocationServices() {
         locationManager.delegate = self
         
@@ -110,6 +120,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
     }
     
+    // request authorization to use them from the user
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
@@ -132,6 +143,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 break
         }
     }
+    
+    // set up location services parameters
     func startReceivingLocationChanges() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
         if authorizationStatus != .authorizedWhenInUse && authorizationStatus != .authorizedAlways {
@@ -150,14 +163,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         locationManager.startUpdatingLocation()
     }
     
+    // draw the world box, center map and start tracking location
     func setup() {
-        
         self.drawBox()
         self.centerMapOnLocation(location: initialLocation)
         self.startReceivingLocationChanges()
-        
     }
     
+    // draw the world box. Meow.
     func drawBox(){
         let startLat = 43.600787
         let startLon = -79.735534
@@ -178,22 +191,25 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.myMapView.add(box)
     }
     
+    // converting latitude to meters
     func getDLatFromMeters (meters: Double) -> Double {
         return meters / 111.32
     }
     
+    // converting longitude to meters
     func getDLongFromMeters (meters: Double, latitude: Double)  -> Double {
         return meters / 111.32 / cos(latitude * Double.pi/180)
     }
     
+    // When new location is received, show it
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
 //        print(lastLocation.coordinate.longitude, lastLocation.coordinate.latitude)
         self.dropAPin(location: lastLocation)
         self.showResult(location: lastLocation)
-        // Do something with the location.
     }
     
+    // In case there was an error in location services
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         if let error = error as? CLError, error.code == .denied {
             // Location updates are not authorized.
@@ -204,6 +220,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Notify the user of any errors.
     }
     
+    // assigns the right world to the game and shows in in labels and images
     func showResult(location: CLLocation) {
        
         // display if in the box
@@ -215,9 +232,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.lblName.text = "You are in " + game.world.name
         self.lblDesc.text = game.world.desc
         self.img.image = UIImage(named: game.world.picUrl)
-        
     }
     
+    // Checks if you are in the box
     func isInBox(location: CLLocation, box: Array<CLLocationCoordinate2D>) -> Bool {
         // location of the point of interest
         let coordinate = MKMapPointForCoordinate(location.coordinate)
@@ -240,6 +257,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         return false
     }
     
+    // Drops a pin on the map
     func dropAPin(location: CLLocation) {
         // clear last pin
         self.myMapView.removeAnnotations(self.myMapView.annotations)
@@ -254,6 +272,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
     }
     
+    // render the map
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         let render = MKPolylineRenderer(polyline: overlay as! MKPolyline)
         render.strokeColor = UIColor.blue
