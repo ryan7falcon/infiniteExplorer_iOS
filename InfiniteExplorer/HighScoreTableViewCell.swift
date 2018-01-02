@@ -4,7 +4,7 @@
 //
 //  Created by Xcode User on 2017-12-20.
 //  Author Thomas Irwin
-// The Cell Design for the Table
+// The Cell Design for the HighScore Table
 
 import UIKit
 
