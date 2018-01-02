@@ -66,6 +66,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90812899199999997" green="0.96852492339999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="W7j-GT-TvA"/>
                     </view>
                     <connections>
@@ -135,6 +136,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90812899199999997" green="0.96852492339999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="bqJ-A6-EN5"/>
                     </view>
                 </viewController>
@@ -165,6 +167,7 @@
                                         </connections>
                                     </barButtonItem>
                                 </items>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </toolbar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Scores" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opk-bI-mf1">
                                 <rect key="frame" x="32" y="20" width="311" height="55"/>
@@ -215,7 +218,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fak-ee-06I">
-                                <rect key="frame" x="32" y="83" width="311" height="29"/>
+                                <rect key="frame" x="32" y="85" width="311" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="World 1"/>
@@ -255,6 +258,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.90812899199999997" green="0.96852492339999996" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="e06-DW-DAK"/>
                     </view>
                     <connections>
@@ -286,6 +290,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="08l-V4-6Fl"/>
-        <segue reference="JvD-Uc-DSW"/>
+        <segue reference="gTO-sm-dX9"/>
     </inferredMetricsTieBreakers>
 </document>
