@@ -205,6 +205,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func locationManager(_ manager: CLLocationManager,  didUpdateLocations locations: [CLLocation]) {
         let lastLocation = locations.last!
 //        print(lastLocation.coordinate.longitude, lastLocation.coordinate.latitude)
+        print(locations.count)
         self.dropAPin(location: lastLocation)
         self.showResult(location: lastLocation)
     }
