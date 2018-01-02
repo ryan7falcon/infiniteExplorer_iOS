@@ -10,11 +10,13 @@ import WatchKit
 import Foundation
 import WatchConnectivity
 
+
 class WorldInterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         self.update()
     }
     
+    // request data from the phone and accept the reply
     func update () {
         if(WCSession.default.isReachable){
             let message = ["getProgData":[:]]
@@ -41,11 +43,14 @@ class WorldInterfaceController: WKInterfaceController, WCSessionDelegate {
         }
     }
     
+    // display world name, description and image
     func display() {
         self.lblName.setText(self.world.name)
         self.lblDesc.setText(self.world.desc)
         self.img.setImageNamed(self.world.picUrl)
     }
+    
+    // proceess the received data and reply with success message
     func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
         var replyValues = Dictionary<String, AnyObject>()
         let loadedData = message["progData"]
@@ -54,15 +59,20 @@ class WorldInterfaceController: WKInterfaceController, WCSessionDelegate {
         self.world = loadedWorld!
         self.display()
         
-        replyValues["status"] = "Program Received" as AnyObject?
+        replyValues["status"] = "Data Received" as AnyObject?
         replyHandler(replyValues)
     }
     
+    // world name label
     @IBOutlet var lblName : WKInterfaceLabel!
+    // world name description
     @IBOutlet var lblDesc : WKInterfaceLabel!
+    // a cat picture
     @IBOutlet var img : WKInterfaceImage!
+    // world object - will be received from the phone
     var world : World = World()
     
+    // activate session
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
