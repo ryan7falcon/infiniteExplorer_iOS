@@ -42,14 +42,14 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
             if (Api.World1Scores?.count)! > 0
             {
                 self.HighScoreTable.reloadData()
-                self.timer.invalidate()
+               // self.timer.invalidate()
             }
         }
         if(WorldChooser.selectedSegmentIndex == 1){
             if (Api.World2Scores?.count)! > 0
             {
                 self.HighScoreTable.reloadData()
-                self.timer.invalidate()
+               // self.timer.invalidate()
             }
         }
     }
@@ -62,9 +62,10 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NewName = "AAA"
+        NewName = "YourName"
         NewScore = 100001
         NewWorld = 2
+        //Posts the API Score if called
       //  Api.PostScore(name:NewName, score:NewScore , world:NewWorld)
         
         
@@ -80,7 +81,7 @@ class HighScoreViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         self.timer = Timer.scheduledTimer(timeInterval: 0.3, target: self, selector:  #selector(self.refreshTable), userInfo: nil, repeats: true);
+         self.timer = Timer.scheduledTimer(timeInterval: 0.4, target: self, selector:  #selector(self.refreshTable), userInfo: nil, repeats: true);
     }
     
     override func viewDidAppear(_ animated: Bool) {

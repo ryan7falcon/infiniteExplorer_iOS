@@ -129,7 +129,7 @@ class HighScoreApiClass: NSObject {
         //Adds Header Fields
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.addValue("application/json", forHTTPHeaderField: "Accept")
-        //Preforms the task
+        //Preforms the Post Task
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             do {
                
